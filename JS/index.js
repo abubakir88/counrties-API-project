@@ -43,6 +43,7 @@ const countryName = document.getElementsByClassName("countryName");
 region.forEach((element) => {
   element.addEventListener("click", () => {
     console.log(element);
+    element.parentElement.style.display = "none"; /////////
     Array.from(regionName).forEach((elem) => {
       if (
         elem.innerText.includes(element.innerText) ||
