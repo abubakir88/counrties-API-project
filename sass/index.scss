@@ -1,0 +1,151 @@
+// @import url(https://fonts.google.com/share?query=nunito);
+
+@font-face {
+  font-family: nunito;
+  src: url(../../fonts/NunitoSans_10pt-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #111517;
+  font-family: nunito;
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  &:nth-child(1) {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  .toggle {
+    font-size: 18px;
+    cursor: pointer;
+    i {
+      padding-right: 5px;
+    }
+  }
+}
+
+.container:nth-child(2) {
+  .form-control {
+    width: 400px;
+    //   background-color: red;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    input {
+      width: 100%;
+      padding: 17px 14px;
+      outline: 0;
+      border: 0;
+      font-size: 16px;
+      letter-spacing: 5px;
+    }
+    i {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+    }
+  }
+  .dropDownCon {
+    width: 200px;
+    position: relative;
+    .dropDown {
+      width: 100%;
+      padding: 17px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 16px;
+      p {
+        letter-spacing: 3px;
+      }
+      i {
+        cursor: pointer;
+      }
+    }
+    .drop {
+      position: absolute;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      top: 64px;
+      padding: 17px 14px;
+      width: 100%;
+      border-radius: 8px;
+      background-color: #fafafa;
+      cursor: pointer;
+      p {
+        margin: 5px 0px;
+      }
+    }
+  }
+}
+
+.countries {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  .country {
+    min-height: 350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    .country-img {
+      height: 250px;
+      img {
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+      }
+    }
+    .country-info {
+      padding: 20px 17px;
+      h5 {
+        padding: 10px 0;
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+.showDropDown {
+  display: none;
+}
+
+.dark {
+  background-color: #202c36;
+  color: #fff;
+  transition: 0.9s ease-out;
+  button,
+  i {
+    color: #fff;
+  }
+  .form-control i {
+    color: #000;
+  }
+  .container .dropDownCon .drop {
+    background-color: #202c36;
+  }
+}
