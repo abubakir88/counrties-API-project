@@ -4,7 +4,6 @@ const dropElem = document.querySelector(".drop");
 const region = document.querySelectorAll(".region");
 const search = document.querySelector(".search");
 const toggle = document.querySelector(".toggle");
-// const moon = document.querySelector(".moon");
 
 async function getCountry() {
   const url = await fetch("./index.json");
@@ -72,24 +71,17 @@ toggle.addEventListener("click", () => {
 
 //MODAL///////////////////////////////////
 const counrtyModal = document.querySelector(".counrtyModal");
-
 function showCountryDetail(data) {
-  // function getCurrenciesName(country) {
-  //   const currenciesKey = Object.keys(country.currencies)[0];
-  //   const currenciesName = country.currencies[currenciesKey].name;
-  //   return currenciesName;
-  // }
   counrtyModal.classList.toggle("show");
-  let [, languages] = Object.keys(data.languages);
+  let languages = Object.keys(data.languages);
   let currencies = Object.keys(data.currencies)[0];
-  console.log(currencies);
   counrtyModal.innerHTML = `<button class="back">
   <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+          style="fill: rgba(0, 0, 0, 1); "
         >
           <path
             d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"
@@ -108,15 +100,20 @@ function showCountryDetail(data) {
           <p><b>Population: </b> ${data.population}</p>
           <p><b>Region: </b> ${data.region}</p>
           <p><b>Sub-region: </b> ${data.subregion}</p>
+          <div class="borderCountries">
+          <p> <b>Border Countries:</b> ${data.borders}</p>
+          </div>
         </div>
         <div class="innerRight inner">
           <p><b>Capital: </b> ${data.capital}</p>
           <p><b>Top Level Domain: </b> ${data.tld}</p>
           <p><b>Currencies: </b> ${currencies}</p>
           <p><b>Languages: </b> ${languages}</p>
+          <a target="_blank" href=${data.maps.googleMaps}><b>Map</b></a>
         </div>
       </div>
     </div>
+    
   </div>`;
   const back = counrtyModal.querySelector(".back");
   back.addEventListener("click", () => {

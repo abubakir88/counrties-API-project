@@ -25,6 +25,10 @@ button {
   background: transparent;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
   padding: 30px;
@@ -209,12 +213,23 @@ button {
       .moldalInfo {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
         .inner p {
           letter-spacing: 0.3px;
           b {
             font-weight: 800;
           }
         }
+      }
+    }
+    .borderCountries {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      button {
+        background-color: #ddd;
+        padding: 8px;
       }
     }
   }

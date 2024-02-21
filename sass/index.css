@@ -22,6 +22,10 @@ button {
   background: transparent;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
   padding: 30px;
@@ -205,12 +209,23 @@ button {
 .counrtyModal .modal .rightModal .moldalInfo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .counrtyModal .modal .rightModal .moldalInfo .inner p {
   letter-spacing: 0.3px;
 }
 .counrtyModal .modal .rightModal .moldalInfo .inner p b {
   font-weight: 800;
+}
+.counrtyModal .modal .borderCountries {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.counrtyModal .modal .borderCountries button {
+  background-color: #ddd;
+  padding: 8px;
 }
 
 .show {
