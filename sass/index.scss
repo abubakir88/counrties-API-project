@@ -56,7 +56,9 @@ button {
       outline: 0;
       border: 0;
       font-size: 16px;
-      letter-spacing: 5px;
+      &::placeholder {
+        letter-spacing: 5px;
+      }
     }
     i {
       position: absolute;
@@ -102,15 +104,19 @@ button {
 
 .countries {
   padding: 30px;
+  // display: flex;
+  // justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   .country {
     min-height: 350px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    width: 300px;
+    // width: 300px;
+    max-width: 500px;
     border-radius: 8px;
     overflow: hidden;
+    cursor: pointer;
     .country-img {
       height: 250px;
       img {
@@ -148,4 +154,72 @@ button {
   .container .dropDownCon .drop {
     background-color: #202c36;
   }
+  .counrtyModal {
+    background-color: #111517;
+    color: #fff !important;
+  }
+}
+
+.counrtyModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: #202c36;
+  background-color: #fff;
+  padding: 30px;
+  .back {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .leftModal {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .rightModal {
+      width: 50%;
+      margin-left: 20px;
+      h1 {
+        margin: 10px 0;
+        letter-spacing: 1px;
+        font-size: 40px;
+      }
+      .moldalInfo {
+        display: flex;
+        justify-content: space-between;
+        .inner p {
+          letter-spacing: 0.3px;
+          b {
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show {
+  display: none;
 }
