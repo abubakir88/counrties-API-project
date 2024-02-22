@@ -16,7 +16,8 @@ body {
   min-height: 100vh;
   background-color: #fafafa;
   color: #111517;
-  font-family: nunito;
+  font-family: nunito !important;
+  transition: 0.7s ease-out;
 }
 
 button {
@@ -112,7 +113,7 @@ a {
   // justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 40px;
   .country {
     min-height: 350px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);

@@ -13,7 +13,8 @@ body {
   min-height: 100vh;
   background-color: #fafafa;
   color: #111517;
-  font-family: nunito;
+  font-family: nunito !important;
+  transition: 0.7s ease-out;
 }
 
 button {
@@ -107,7 +108,7 @@ a {
   padding: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 40px;
 }
 .countries .country {
   min-height: 350px;
