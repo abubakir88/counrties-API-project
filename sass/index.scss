@@ -160,8 +160,14 @@ a {
     background-color: #202c36;
   }
   .counrtyModal {
-    background-color: #111517;
+    background-color: #202c36;
     color: #fff !important;
+    .back {
+      background-color: #202c36;
+      svg path {
+        fill: #fff;
+      }
+    }
   }
 }
 
@@ -195,12 +201,14 @@ a {
     align-items: center;
     height: 100%;
     width: 100%;
+    column-gap: 40px;
     .leftModal {
       width: 50%;
       img {
         width: 100%;
-        height: 100%;
+        height: 80%;
         object-fit: cover;
+        max-height: 400px;
       }
     }
     .rightModal {
@@ -213,7 +221,8 @@ a {
       }
       .moldalInfo {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        column-gap: 30%;
         align-items: center;
         flex-wrap: wrap;
         .inner p {
